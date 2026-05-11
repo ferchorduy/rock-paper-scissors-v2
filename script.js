@@ -1,8 +1,3 @@
-//score variables
-
-let humanScore = 0;
-let computerScore = 0;
-
 //Generate a function that randomly shows one of the three choices between rock, paper, scissors
 
 // function getComputerChoice() {
@@ -10,6 +5,7 @@ let computerScore = 0;
 //   const choice = Math.floor(Math.random() * 3);
 //   return choices[choice];
 // };
+
 //                                return        choices                      [choice];
 const getComputerChoice = () => ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
 
@@ -23,19 +19,59 @@ const getHumanChoice = () => prompt('Choose between rock, paper, scissors.').toL
 
 //Generate a function that plays a round, sends a message showing the choices, and incrementing the score of the winner of the round
 
-const playRound = (humanChoice, computerChoice) => {
-  if (getHumanChoice === getComputerChoice) {
-    console.log(`Tie! ${getHumanChoice} is the same as ${getComputerChoice}`);
-  } else if ((getHumanChoice === 'rock' && getComputerChoice === 'scissors') ||
-             (getHumanChoice === 'paper' && getComputerChoice === 'rock') ||
-             (getHumanChoice === 'scissors' && getComputerChoice === 'paper')) {
-    humanScore += 1;
-    console.log(`You picked ${getHumanChoice}, beating bot's ${getComputerChoice}`);
-  } else {
-    computerScore += 1;
-    console.log(`You picked ${getHumanChoice}, losing to bot's ${getComputerChoice}`);
-  }
-};
+// Claude's code below. 2026. Using dictionaries, objects in JS according to Claude.
 
-playRound(getHumanChoice(), getComputerChoice());
-console.log(humanScore, computerScore);
+// const playRound = (humanChoice, computerChoice) => {
+//     const wins = {
+//         rock: 'scissors',
+//         paper: 'rock',
+//         scissors: 'paper'
+//     }
+
+//     if (humanChoice === computerChoice) {
+//         console.log(`Tie! You both picked ${humanChoice}`)
+//     } else if (wins[humanChoice] === computerChoice) {
+//         humanScore++
+//         console.log(`You win! ${humanChoice} beats ${computerChoice}`)
+//     } else {
+//         computerScore++
+//         console.log(`You lose! ${computerChoice} beats ${humanChoice}`)
+//     }
+// }
+
+const playGame = () => {
+  
+  //score variables
+
+  let humanScore = 0;
+  let computerScore = 0;
+
+  const playRound = (humanChoice, computerChoice) => {
+    if (humanChoice === computerChoice) {
+      console.log(`Tie! ${humanChoice} is the same as ${computerChoice}. Score: ${humanScore} - ${computerScore}`);
+    } else if ((humanChoice === 'rock' && computerChoice === 'scissors') ||
+               (humanChoice === 'paper' && computerChoice === 'rock') ||
+               (humanChoice === 'scissors' && computerChoice === 'paper')) {
+      humanScore++
+      console.log(`You picked ${humanChoice}, beating bot's ${computerChoice}. Score: ${humanScore} - ${computerScore}`);
+    } else {
+      computerScore++
+      console.log(`You picked ${humanChoice}, losing to bot's ${computerChoice}. Score: ${humanScore} - ${computerScore}`);
+    }
+  };
+
+  for (let i = 0; i < 5; i++) {
+    playRound(getHumanChoice(), getComputerChoice());
+  }
+
+  if (humanScore > computerScore) {
+    console.log(`You win! ${humanScore} to ${computerScore}`);
+  } else if (computerScore > humanScore) {
+    console.log(`You lose! ${humanScore} to ${computerScore}`);
+  } else {
+    console.log(`Tie! ${humanScore} to ${computerScore}`);
+  }
+
+}
+
+playGame();
