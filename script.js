@@ -11,7 +11,7 @@ let computerScore = 0;
 //   return choices[choice];
 // };
 //                                return        choices                      [choice];
-const getComputerChoiceClaude = () => ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
+const getComputerChoice = () => ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
 
 //using Claude to learn how to write concise code. Here: inlining. i didn't see it, but my return in
 //my getComputerChoice() are literally two variables. just replace them with their values directly
@@ -21,12 +21,21 @@ const getComputerChoiceClaude = () => ['rock', 'paper', 'scissors'][Math.floor(M
 
 const getHumanChoice = () => prompt('Choose between rock, paper, scissors.').toLowerCase();
 
-const playRound = (getHumanChoice, getComputerChoice) => {
+//Generate a function that plays a round, sends a message showing the choices, and incrementing the score of the winner of the round
+
+const playRound = (humanChoice, computerChoice) => {
   if (getHumanChoice === getComputerChoice) {
     console.log(`Tie! ${getHumanChoice} is the same as ${getComputerChoice}`);
+  } else if ((getHumanChoice === 'rock' && getComputerChoice === 'scissors') ||
+             (getHumanChoice === 'paper' && getComputerChoice === 'rock') ||
+             (getHumanChoice === 'scissors' && getComputerChoice === 'paper')) {
+    humanScore += 1;
+    console.log(`You picked ${getHumanChoice}, beating bot's ${getComputerChoice}`);
   } else {
-    console.log(`You picked ${getHumanChoice}, the bot picked ${getComputerChoice}`);
+    computerScore += 1;
+    console.log(`You picked ${getHumanChoice}, losing to bot's ${getComputerChoice}`);
   }
 };
 
 playRound(getHumanChoice(), getComputerChoice());
+console.log(humanScore, computerScore);
