@@ -3,9 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="intro">
+    <input type="text" id="name-input" class="intro__input" placeholder="enter name" autocomplete="off" maxlength="10">
+    <button id="play-button" class="intro__button">PLAY</button>
+  </div>
+  <div class="game">
+    <div class="game__global">
+
+    </div>
+    <div class="game__round-info">
+      <div class="game__user-choice"></div>
+      <div class="game__user-score"></div>
+      <div>:</div>
+      <div class="game__clanker-score"></div>
+      <div class="game__clanker-choice"></div>
+    </div>
+    <div class="game__choices">
+      <div id="rock" class="game__choice">{R}</div>
+      <div id="paper" class="game_choice">[P]</div>
+      <div id="scissors" class="game__choice">\S/</div>
+    </div>
+    <div class="game__footer">
+      <div class="game_message">beat the clanker!</div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

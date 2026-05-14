@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgb(216, 197, 171);
+}
+
+@keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.intro {
+  display: none;
+  flex-direction: column;
+}
+
+.intro__input {
+  text-align: center;
+  caret-color: rgb(216, 197, 171);
+}
+
+.intro__input::placeholder {
+  color: var(--placeholder-text-color, rgb(240, 220, 192));
+  text-align: center;
+}
+
+.intro__input,
+.intro__button {
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  animation: fadein 1s;
+  color: inherit;
+  outline: none;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.game__global {
+  display: flex;
+  justify-content: space-around;
+}
