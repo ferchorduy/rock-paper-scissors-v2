@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: solid 1px rgb(94, 229, 234);
 }
 
 html {
@@ -21,6 +22,9 @@ body {
   font-size: 36px;
   font-weight: 900;
   color: rgb(216, 197, 171);
+  animation: fadein 1s;
+  overflow-x: hidden;
+  min-width: 320px;
 }
 
 @keyframes fadein {
@@ -29,8 +33,10 @@ body {
 }
 
 .intro {
-  display: none;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro__input {
@@ -48,17 +54,74 @@ body {
   border: none;
   font: inherit;
   background-color: transparent;
-  animation: fadein 1s;
   color: inherit;
-  outline: none;
 }
 
 .game {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .game__global {
   display: flex;
+  align-items: center;
+}
+
+.game__global-score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  width: 33.33%;
+}
+
+.game__user-name,
+.game__clanker-name {
+  padding: 2rem 0;
+  flex: 1;
+  text-align: center;
+}
+
+.game__round-info {
+  display: flex;
   justify-content: space-around;
+  font-size: 4rem;
+}
+
+.game__choices {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.game__choice {
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  font-size: clamp(2rem, 10vw, 8rem);
+  color: inherit;
+  flex: 1;
+}
+
+.game__footer {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__message {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+.game__choice:hover {
+  color:rgb(196, 164, 122);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

@@ -11,24 +11,32 @@
     <input type="text" id="name-input" class="intro__input" placeholder="enter name" autocomplete="off" maxlength="10">
     <button id="play-button" class="intro__button">PLAY</button>
   </div>
-  <div class="game">
+  <div class="game hidden">
     <div class="game__global">
-
+      <p class="game__user-name">name</p>
+      <div class="game__global-score-container">
+        <p class="game__global-left-bracket">(</p>
+        <p class="game__user-global">0</p>
+        <span class="game__global-divider">-</span>
+        <p class="game__clanker-global">0</p>
+        <p class="game__global-right-bracket">)</p>
+      </div>
+      <p class="game__clanker-name">(clanker)</p>
     </div>
     <div class="game__round-info">
-      <div class="game__user-choice"></div>
-      <div class="game__user-score"></div>
-      <div>:</div>
-      <div class="game__clanker-score"></div>
-      <div class="game__clanker-choice"></div>
+      <p class="game__user-choice"></p>
+      <p class="game__user-score">0</p>
+      <span class="game__score-divider">:</span>
+      <p class="game__clanker-score">0</p>
+      <p class="game__clanker-choice"></p>
     </div>
     <div class="game__choices">
-      <div id="rock" class="game__choice">{R}</div>
-      <div id="paper" class="game_choice">[P]</div>
-      <div id="scissors" class="game__choice">\S/</div>
+      <button id="rock" class="game__choice">{R}</button>
+      <button id="paper" class="game__choice">[P]</button>
+      <button id="scissors" class="game__choice">\S/</button>
     </div>
     <div class="game__footer">
-      <div class="game_message">beat the clanker!</div>
+      <p class="game__message">beat the clanker!</p>
     </div>
   </div>
   <script src="script.js"></script>
