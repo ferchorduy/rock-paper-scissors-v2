@@ -1,17 +1,29 @@
-//Generate a function that randomly shows one of the three choices between rock, paper, scissors
-                            
+// Variables and constants
+const nameInput = document.getElementById('name-input');
+const playButton = document.getElementById('play-button');
+const nameInputContainer = document.querySelector('.game__user-name')
+const introPage = document.querySelector('.intro');
+const gamePage = document.querySelector('.game');
+
+
+
+//Generate a function where clanker chooses between rock, paper, scissors
 const getComputerChoice = () => ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
 
-//Generate a function that a user can input their choice in a prompt
+// Function to allow enter key to enter game after name typed
+nameInput.addEventListener('keypress', e => e.key === 'Enter' && playButton.click());
 
-const getHumanChoice = () => prompt('Choose between rock, paper, scissors.').toLowerCase();
+// Function to add nameInput to the UI and enter gamePage
+playButton.addEventListener('click', () => {
+  gamePage.classList.remove('hidden');
+  introPage.classList.add('hidden');
+  nameInputContainer.textContent = String(nameInput.value) || ('you');
+});
 
 //Generate a function that plays a round, sends a message showing the choices, and incrementing the score of the winner of the round
-
 const playGame = () => {
   
   //score variables
-
   let humanScore = 0;
   let computerScore = 0;
 

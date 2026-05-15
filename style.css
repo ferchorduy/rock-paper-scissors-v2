@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: solid 1px rgb(94, 229, 234);
+  /* outline: solid 1px rgb(94, 229, 234); */
 }
 
 html {
@@ -37,11 +37,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fadein 1s;
 }
 
 .intro__input {
   text-align: center;
   caret-color: rgb(216, 197, 171);
+}
+
+.intro__input:focus {
+  outline: none;
 }
 
 .intro__input::placeholder {
@@ -62,6 +67,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  animation: fadein 1s;
 }
 
 .game__global {
@@ -116,9 +122,14 @@ body {
   font-size: clamp(1rem, 3vw, 2rem);
 }
 
-.game__choice:hover {
+.game__choice:hover,
+.intro__button:hover {
   color:rgb(196, 164, 122);
   transform: scale(1.05);
+}
+
+.game__choice,
+.intro__button {
   cursor: pointer;
 }
 

@@ -8,12 +8,12 @@
 </head>
 <body>
   <div class="intro">
-    <input type="text" id="name-input" class="intro__input" placeholder="enter name" autocomplete="off" maxlength="10">
+    <input type="text" id="name-input" class="intro__input" placeholder="enter name" autocomplete="off" spellcheck="false" maxlength="10">
     <button id="play-button" class="intro__button">PLAY</button>
   </div>
   <div class="game hidden">
     <div class="game__global">
-      <p class="game__user-name">name</p>
+      <p class="game__user-name"></p>
       <div class="game__global-score-container">
         <p class="game__global-left-bracket">(</p>
         <p class="game__user-global">0</p>
@@ -21,7 +21,7 @@
         <p class="game__clanker-global">0</p>
         <p class="game__global-right-bracket">)</p>
       </div>
-      <p class="game__clanker-name">(clanker)</p>
+      <p class="game__clanker-name">clanker</p>
     </div>
     <div class="game__round-info">
       <p class="game__user-choice"></p>
