@@ -92,8 +92,20 @@ body {
 
 .game__round-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: 4rem;
+}
+
+.game__user-choice,
+.game__clanker-choice {
+    width: 3ch;
+    text-align: center;
+}
+
+.game__user-score,
+.game__clanker-score {
+    min-width: 1ch;
+    text-align: center;
 }
 
 .game__choices {
@@ -120,6 +132,12 @@ body {
 
 .game__message {
   font-size: clamp(1rem, 3vw, 2rem);
+  white-space: pre-line;
+  text-align: center;
+  min-height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game__choice:hover,
