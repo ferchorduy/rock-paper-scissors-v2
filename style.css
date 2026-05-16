@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: antiquewhite;
-  font-size: 36px;
+  font-size: 2rem;
   font-weight: 900;
   color: rgb(216, 197, 171);
   animation: fadein 1s;
